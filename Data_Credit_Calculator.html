@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div id="CalcBox">
-			<h1>Palm Connectivity Calculator</h1>
+			<h1>Data Credit Cost Calculator</h1>
 			<h2>Palm Connectivity, LLC</h2>
 			<h3>Fill Info Below</h3>
 		<table>
@@ -54,7 +54,7 @@
 			</form>
 		</table>
 			<button id="calculatebutton" onclick="myFunction()">CALCULATE</button>
-			<p id="output"></p>
+			<p id="output">It will cost...</p>
 		<script type="text/javascript">
 			function retrieveRadioValue(){
 				var ele = document.getElementsByName("network");
@@ -85,14 +85,14 @@
 				if (radioValue=="helium"){
 					//calculate the value for Helium
 					var hanswer = (((bytes*uplink)*31*sensor)/24)*.00001;
-					document.getElementById("output").innerHTML = "$" + hanswer.toFixed(2) + " Per month in Data Credits";
+					document.getElementById("output").innerHTML = "It will cost $" + hanswer.toFixed(2) + " Per month in Data Credits.";
 
 
 				}
 				else if (radioValue=="palm"){
 					//calculate the value for Palm
 					var panswer = (((bytes*uplink)*31*sensor)/24)*.0000115;
-					document.getElementById("output").innerHTML = "$" + panswer.toFixed(2) + " Per month to run the AWS Server";
+					document.getElementById("output").innerHTML = "It will cost $" + panswer.toFixed(2) + " Per month to run the AWS Server.";
 
 				}
 				//Notifying the user if they are missing values
