@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Palm Connectivity Cost Calculator</title>
+	</head>
+	<body>
+		<div id="CalcBox">
+			<h1>Palm Connectivity Calculator</h1>
+			<h3>Fill Info Below:</h3>
+			<form>
+				<label for="helium">Helium:</label>
+				<input type="radio" id="helium" name="network">
+				<label for="palm">Palm Connectivity:</label>
+				<input type="radio" id="palm" name="network">
+				<br>
+				<label for="uplink">Uplinks per day:</label>
+				<input type="number" id="uplink" name="uplink">
+				<br>
+				<label for="byte">Bytes per uplink:</label>
+				<input type="number" id="byte" name="byte">
+				<br>
+				<label for="sensor">Number of sensors:</label>
+				<input type="number" id="sensor" name="sensor">
+			</form>
+			<button id="calculatebutton" onclick="myFunction()">Calculate</button>
+			<p id="output"></p>
+		<script type="text/javascript">
+			function retrieveRadioValue(){
+				var ele = document.getElementsByName("network");
+
+				for(i=0;i<ele.length; i++){
+					if(ele[i].checked)
+						return ele[i].id;
+				}
+				}
+			function retrieveUplinkValue(){
+				var up = document.getElementById("uplink").value;
+				return up;
+			}
+			function retrieveByteValue(){
+				var byte = document.getElementById("byte").value;
+				return byte;
+			}
+			function retrieveSensorValue(){
+				var sensor = document.getElementById("sensor").value;
+				return sensor;
+			}
+			function myFunction() {
+				var radioValue = retrieveRadioValue();
+				var uplink = retrieveUplinkValue();
+				console.log(uplink);
+				var bytes = retrieveByteValue();
+				var sensor = retrieveSensorValue();
+				if (radioValue=="helium"){
+					//calculate the value for Helium
+					var hanswer = (((bytes*uplink)*31*sensor)/24)*.00001;
+					document.getElementById("output").innerHTML = "$" + hanswer.toFixed(2) + " Per month in Data Credits";
+
+
+				}
+				else if (radioValue=="palm"){
+					//calculate the value for Palm
+					var panswer = (((bytes*uplink)*31*sensor)/24)*.0000115;
+					document.getElementById("output").innerHTML = "$" + panswer.toFixed(2) + " Per month to run the AWS Server";
+
+				}
+				console.log(radioValue);
+			}
+		</script>
+	</body>
+</html>
