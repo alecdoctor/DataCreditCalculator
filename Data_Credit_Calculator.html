@@ -53,7 +53,7 @@
 				</tr>
 			</form>
 		</table>
-			<button id="calculatebutton" onclick="myFunction()">Calculate</button>
+			<button id="calculatebutton" onclick="myFunction()">CALCULATE</button>
 			<p id="output"></p>
 		<script type="text/javascript">
 			function retrieveRadioValue(){
@@ -95,7 +95,16 @@
 					document.getElementById("output").innerHTML = "$" + panswer.toFixed(2) + " Per month to run the AWS Server";
 
 				}
-				console.log(radioValue);
+				//Notifying the user if they are missing values
+				if (document.getElementById("uplink").value.length == 0) {
+					alert("You must enter uplinks per day. (48 = 2 times per hour)")
+				}
+				if (document.getElementById("byte").value.length == 0) {
+					alert("You must enter bytes per uplink. (0x09 = 1 Byte)")
+				}
+				if (document.getElementById("sensor").value.length == 0) {
+					alert("You must enter the number of sensors in your system.")
+				}
 			}
 		</script>
 	</body>
