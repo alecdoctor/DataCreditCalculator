@@ -2,26 +2,57 @@
 <html>
 	<head>
 		<title>Palm Connectivity Cost Calculator V1</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div id="CalcBox">
 			<h1>Palm Connectivity Calculator</h1>
-			<h3>Fill Info Below:</h3>
+			<h2>Palm Connectivity, LLC</h2>
+			<h3>Fill Info Below</h3>
+		<table>
 			<form>
-				<label for="helium">Helium:</label>
-				<input type="radio" id="helium" name="network">
-				<label for="palm">Palm Connectivity:</label>
-				<input type="radio" id="palm" name="network">
-				<br>
-				<label for="uplink">Uplinks per day:</label>
-				<input type="number" id="uplink" name="uplink">
-				<br>
-				<label for="byte">Bytes per uplink:</label>
-				<input type="number" id="byte" name="byte">
-				<br>
-				<label for="sensor">Number of sensors:</label>
-				<input type="number" id="sensor" name="sensor">
+				<tr>
+					<td>
+						<label for="helium">Helium:</label>
+					</td>
+					<td>
+						<input type="radio" id="helium" name="network">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="palm">Palm Connectivity:</label>
+					</td>
+					<td>
+						<input type="radio" id="palm" name="network">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="uplink">Uplinks per day:</label>
+					</td>
+					<td>
+						<input type="number" id="uplink" name="uplink">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="byte">Bytes per uplink:</label>
+					</td>
+					<td>
+						<input type="number" id="byte" name="byte">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="sensor">Number of sensors:</label>
+					</td>
+					<td>
+						<input type="number" id="sensor" name="sensor">
+					</td>
+				</tr>
 			</form>
+		</table>
 			<button id="calculatebutton" onclick="myFunction()">Calculate</button>
 			<p id="output"></p>
 		<script type="text/javascript">
