@@ -11,6 +11,7 @@ Finding a way to calculate the USD amount spent on data credits per month on the
 3. Enter the size of the Byte you are sending over the network.
 	*This can be viewed by looking at your specific sensors packet decoder information*
 
-### Software Example
+### Software GUI Example
+This is an example of how you would interface with the software on a web browser.
 
 ![Code Example](example.png)
