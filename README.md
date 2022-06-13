@@ -10,3 +10,7 @@ Finding a way to calculate the USD amount spent on data credits per month on the
 	*48 uplinks is 2 times per hour*
 3. Enter the size of the Byte you are sending over the network.
 	*This can be viewed by looking at your specific sensors packet decoder information*
+
+### Software Example
+
+![Code Example](example.png)
